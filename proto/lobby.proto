@@ -1,0 +1,93 @@
+syntax = "proto3";
+package lobby;
+
+message QueryRole
+{
+	int32 accountid = 1; 
+}
+
+message CreateRole
+{
+	int32 accountid = 1;
+	string name = 2;
+	int32 profession = 3;
+}
+
+message EnterLobby
+{
+	int32 accountid = 1;
+	int32 roleid = 2;
+}
+
+message QueryRoleRes
+{
+	int32 accountid = 1;
+	repeated int32 role_ids = 2;
+	repeated string role_names = 3;
+}
+
+message CreateRoleRes
+{
+	int32 error_code = 1;
+	int32 accountid = 2;
+	int32 role_id = 3;
+	string role_name = 4;
+}
+
+message EnterLobbyRes
+{
+	int32 roleid = 1;
+	int32 accountid = 2;
+	string rolename = 3;
+	int32 profession = 4;
+	int32 mapid = 5;
+	int32 attack = 6;
+	int32 blood = 7;
+	int32 defense = 8;
+	int32 glod = 9;
+	int32 grade = 10;
+	int32 mana = 11;
+	int32 speed = 12;
+	int32 exp = 13;
+	int32 posx = 14;
+	int32 posy = 15;
+}
+
+message LoadComplete
+{
+	int32 accountid = 1;
+}
+
+message LeaveSight
+{
+	int32 accountid = 1;
+	int32 roleid = 2;
+}
+
+message EnterSight
+{
+	int32 accountid = 1;
+	int32 mapid = 2;
+	int32 roleid = 3;
+	string rolename = 4;
+	int32 profession = 5;
+	int32 posx = 6;
+	int32 posy = 7;
+	int32 blood = 8;
+	int32 speed = 9;
+}
+
+message MoveReq
+{
+	int32 accountid = 1;
+	int32 posx = 2;
+	int32 posy = 3;
+}
+
+message MoveRes
+{
+	int32 accountid = 1;
+	int32 moverid = 2;
+	int32 posx = 3;
+	int32 posy = 4;
+}

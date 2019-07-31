@@ -1,0 +1,53 @@
+syntax = "proto3";
+package common.server;
+
+message Identity
+{
+	string name = 1;
+	int32  id = 2;
+}
+
+message RemoteCall
+{
+	string proto = 1;
+	bytes   data = 2;
+}
+
+message RemoteRep
+{
+	int32 error_code = 1;
+	string proto = 2;
+	bytes data = 3;
+}
+
+message GateInfoNotice
+{
+	int32 serverid = 1;
+	int32 onlinenum = 2;
+	string gate_host = 3;
+	int32 gate_port = 4;
+}
+
+message AuthSession
+{
+	string sessionkey = 1;
+	int32 accountid = 2;
+}
+
+message AuthSessionRep
+{
+	int32 error_code = 1;
+	int32 accountid = 2;
+}
+
+message ForwardMessage
+{
+	int32 uid = 1;
+	string proto = 2;
+	bytes data = 3;
+}
+
+message ClientExit
+{
+	int32 accountid = 1;
+}

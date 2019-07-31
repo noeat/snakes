@@ -1,0 +1,42 @@
+syntax = "proto3";
+package common;
+
+message MsgHead 
+{
+    string proto = 1;
+    bytes   data = 2;
+}
+
+enum ErrorCode
+{
+	ERR_SUCCESS = 0;
+	ERR_FAILED = 1;
+	ERR_REPEATED = 2;
+	ERR_AUTHTIMEOUT = 3;
+	ERR_ACCOUNTORPASSWD = 4;
+	ERR_AUTHFAILED = 5;
+	ERR_SESSIONKEY = 6;
+	ERR_ROLENAME = 7;
+	ERR_INTERNAL_0 = 500;
+	ERR_INTERNAL_1 = 501;
+	ERR_INTERNAL_2 = 502;
+	ERR_INTERNAL_3 = 503;
+	ERR_INTERNAL_4 = 504;
+	ERR_INTERNAL_5 = 505;
+}
+
+message Error
+{
+	int32 error_code = 1;
+	string error_msg = 2;
+	string op = 3;
+}
+
+enum ServerStatus
+{
+	STATUS_NORMAL = 0;
+	STATUS_NEW = 1;
+	STATUS_HOT = 2;
+	STATUS_MAINTAIN = 3;
+	STATUS_CLOSED = 4;
+}

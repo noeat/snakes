@@ -1,0 +1,30 @@
+network:
+  server_id: 20
+  server_type: 2
+  work_thread: 8
+  enc_word: 0
+  server_host: 10.246.34.84
+  front_port: 9002
+  listens:
+    -
+      session_type: 3
+      listen_port: 9002
+
+  connectors:
+    -
+      connect_address: 127.0.0.1 #连接到lobby
+      connect_port: 8000
+      reconnect_time: 5000
+    
+    - 
+      connect_address: 127.0.0.1 #连接到login
+      connect_port: 8001
+      reconnect_time: 5000
+
+lua_path: ./scripts/gate/main.lua
+
+cpp_log:
+  async: false
+  enable_console: true
+  name: gate_engine
+  level: 1

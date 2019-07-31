@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package gate;
+
+message Auth
+{
+	int32 accountid = 1;
+	string sessionkey = 2;
+}
+

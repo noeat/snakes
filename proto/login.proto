@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package login;
+
+message RegisterReq
+{
+	string account = 1;
+	string passwd = 2;
+}
+
+message RegisterRes
+{
+	int32 errcode = 1;
+}
+
+message LoginReq
+{
+    string account = 1;
+	string passwd = 2;
+}
+
+message LoginRes
+{
+	int32 errcode = 1;
+	int32 accountid = 2;
+}
+
+
+message GateInfo
+{
+	int32  server_status = 1;
+	string gate_host = 2;
+	int32  gate_port = 3;
+}
+
+message ServerList
+{
+	repeated GateInfo server_lists = 1;
+}
+
+message EnterGateInfo
+{
+	string sessionkey = 1;
+	ServerList list = 2;
+}
+

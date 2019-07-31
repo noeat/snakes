@@ -1,0 +1,20 @@
+network:
+  server_id: 40
+  server_type: 4
+  work_thread: 8
+  enc_word: 0
+  server_host: 10.246.34.84
+  front_port: 0
+  listens:
+    -
+      session_type: 1
+      listen_port: 8000
+
+
+lua_path: ./scripts/lobby/main.lua
+
+cpp_log:
+  async: false
+  enable_console: true
+  name: lobby_engine
+  level: 1
